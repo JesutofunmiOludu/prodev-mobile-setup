@@ -15,6 +15,13 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }>
+        <ThemedView style={styles.titleContainer}>
+        {/* Added the required Entry Screen string here */}
+        <ThemedText type="title">Entry Screen - Awesome</ThemedText>
+        <HelloWave />
+      </ThemedView>
+
+
       <ThemedView style={styles.titleContainer}>
         {/* Requirement: First App Created */}
         <ThemedText type="title">First App Created</ThemedText>
