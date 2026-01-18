@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Platform, View, Text } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { HelloWave } from '@/components/hello-wave';
+import ParallaxScrollView from '@/components/parallax-scroll-view';
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 
 export default function HomeScreen() {
   return (
@@ -16,22 +16,43 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
+        {/* Requirement: First App Created */}
         <ThemedText type="title">First App Created</ThemedText>
         <HelloWave />
       </ThemedView>
 
-      {/* --- ADDED SECTION START --- */}
+      {/* Your Requested Section */}
       <View style={styles.customContainer}>
         <Text style={styles.largeText}>Typescript is great if you practice more</Text>
         <Text style={styles.mediumText}>React Native provides you a single codebase for cross platforms</Text>
         <Text style={styles.smallText}>ALX is awesome</Text>
       </View>
-      {/* --- ADDED SECTION END --- */}
 
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+          Press{' '}
+          <ThemedText type="defaultSemiBold">
+            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
+          </ThemedText>{' '}
+          to open developer tools.
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText>
+          Tap the Explore tab to learn more about what's included in this starter app.
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText>
+          When you're ready, run{' '}
+          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
+          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
+          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -43,7 +64,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    marginBottom: 20,
+  },
+  stepContainer: {
+    gap: 8,
+    marginBottom: 8,
   },
   reactLogo: {
     height: 178,
@@ -52,29 +76,21 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-    marginTop: 20,
-  },
-  // Custom Styles for your new text
+  // Custom styles for your text
   customContainer: {
-    padding: 10,
-    gap: 12,
+    paddingVertical: 15,
+    gap: 10,
   },
   largeText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#2c3e50',
   },
   mediumText: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#34495e',
   },
   smallText: {
     fontSize: 14,
-    fontStyle: 'italic',
-    color: '#7f8c8d',
+    color: '#666',
   },
 });
