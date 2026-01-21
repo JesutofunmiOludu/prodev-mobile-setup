@@ -19,11 +19,11 @@ export default function Index() {
             <Text style={styles.textSmall}>million properties worldwide</Text>
           </View>
           <View style ={styles.buttonGroup}>
-            <TouchableOpacity style = {styles.button}>
+            <TouchableOpacity style={styles.button}>
               <Text style={{...styles.textSmall, color: "Black"}}>Join Here</Text>
             </TouchableOpacity>
-            <TouchableOpacity style = {styles.transparentButton}>
-              <Text style = {styles.textSmall}>Sign In</Text>
+            <TouchableOpacity style={styles.transparentButton}>
+              <Text style={styles.textSmall}>Sign In</Text>
             </TouchableOpacity>
           </View>
           <View style={{ alignItems: "center", paddingVertical: 20 }}>
